@@ -1,0 +1,170 @@
+{
+  "stations": {
+    "港墘站": [
+      {
+        "name": "Flow 抱石攀岩館",
+        "address": "114臺北市內湖區瑞光路258巷55號1樓",
+        "bestExit": "2號出口",
+        "walkingTime": "約 13 分鐘",
+        "website": "https://www.instagram.com/flowboulderinggym/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市內湖區瑞光路258巷55號",
+        "phone": "(02) 2657-6006",
+        "businessHours": "星期日 10:00–19:00\n星期一 17:00–23:00\n星期二 17:00–23:00\n星期三 17:00–23:00\n星期四 17:00–23:00\n星期五 17:00–23:00\n星期六 10:00–19:00"
+      }
+    ],
+    "明德站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（明德店）",
+        "address": "台北市北投區文林北路222號 B1",
+        "bestExit": "1號出口",
+        "walkingTime": "約 5～8 分鐘",
+        "website": "https://tupclimbing.tw/branch/mingde",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市北投區文林北路222號",
+        "phone": "(02) 2822-0858",
+        "businessHours": "星期日 10:00–22:00\n星期一 12:00–17:00\n星期二 12:00–23:00\n星期三 12:00–23:00\n星期四 12:00–23:00\n星期五 12:00–23:00\n星期六 10:00–22:00"
+      }
+    ],
+    "芝山站": [
+      {
+        "name": "小岩館 Little Rock（天母店）",
+        "address": "台北市士林區忠誠路二段12號1樓",
+        "bestExit": "2號出口",
+        "walkingTime": "約 10 分鐘",
+        "website": "https://www.instagram.com/thelittlerock.tianmu/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市士林區忠誠路二段12號",
+        "phone": "(02) 2834-7217",
+        "businessHours": "星期日 10:00–19:00\n星期一 14:00–22:00\n星期二 14:00–22:00\n星期四 14:00–22:00\n星期五 14:00–22:00\n星期六 10:00–19:00"
+      }
+    ],
+    "劍潭站": [
+      {
+        "name": "RedRock 紅石攀岩館（士林店）",
+        "address": "台北市士林區承德路四段261號 B1",
+        "bestExit": "1號出口",
+        "walkingTime": "約 10 分鐘",
+        "website": "https://www.instagram.com/redrock.sl/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市士林區承德路四段261號",
+        "phone": "(02) 2883-7591",
+        "businessHours": "星期日 11:00–19:00\n星期一 休息\n星期二 15:00–23:00\n星期三 15:00–23:00\n星期四 15:00–23:00\n星期五 15:00–23:00\n星期六 11:00–19:00"
+      }
+    ],
+    "雙連站": [
+      {
+        "name": "角·攀岩館 CORNER Bouldering Gym（中山店）",
+        "address": "台北市中山區中山北路二段68號 B1",
+        "bestExit": "1號出口",
+        "walkingTime": "約 5 分鐘",
+        "website": "https://www.instagram.com/corner_bouldering/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市中山區中山北路二段68號",
+        "phone": "(02) 2521-8233",
+        "businessHours": "星期日 9:00–21:00\n星期一 10:00–23:00\n星期二 10:00–23:00\n星期三 10:00–23:00\n星期四 10:00–23:00\n星期五 10:00–23:00\n星期六 9:00–21:00"
+      }
+    ],
+    "忠孝新生站": [
+      {
+        "name": "角·攀岩館 CORNER Bouldering Gym（華山店）",
+        "address": "台北市中山區新生北路一段86號",
+        "bestExit": "1號出口",
+        "walkingTime": "約 5 分鐘",
+        "website": "https://www.instagram.com/corner_bouldering/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市中山區新生北路一段86號",
+        "phone": "(02) 2563-3749",
+        "businessHours": "星期日 9:00–21:00\n星期一 10:00–23:00\n星期二 10:00–23:00\n星期三 10:00–23:00\n星期四 10:00–23:00\n星期五 10:00–23:00\n星期六 9:00–21:00"
+      }
+    ],
+    "龍山寺站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（萬華店）",
+        "address": "台北市萬華區大理街149號",
+        "bestExit": "2號出口",
+        "walkingTime": "約 5～7 分鐘",
+        "website": "https://tupclimbing.tw/branch/wanhua",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市萬華區大理街149號",
+        "phone": "(02) 2308-8250",
+        "businessHours": "星期日 9:00–21:00\n星期一 10:00–23:00\n星期二 10:00–23:00\n星期三 10:00–23:00\n星期四 10:00–23:00\n星期五 10:00–23:00\n星期六 9:00–21:00"
+      }
+    ],
+    "昆陽站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（南港店）",
+        "address": "台北市南港區南港路二段147號",
+        "bestExit": "南港站 1A 或 2號出口",
+        "walkingTime": "約 10 分鐘",
+        "website": "https://tupclimbing.tw/branch/nangang",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市南港區南港路二段147號",
+        "phone": "(02) 2651-9555",
+        "businessHours": "星期日 9:00–21:00\n星期一 12:00–23:00\n星期二 12:00–23:00\n星期三 12:00–23:00\n星期四 12:00–23:00\n星期五 12:00–23:00\n星期六 9:00–21:00"
+      }
+    ],
+    "南港站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（南港店）",
+        "address": "台北市南港區南港路二段147號",
+        "bestExit": "1A 或 2號出口",
+        "walkingTime": "約 10 分鐘",
+        "website": "https://tupclimbing.tw/branch/nangang",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市南港區南港路二段147號",
+        "phone": "(02) 2651-9555",
+        "businessHours": "星期日 9:00–21:00\n星期一 12:00–23:00\n星期二 12:00–23:00\n星期三 12:00–23:00\n星期四 12:00–23:00\n星期五 12:00–23:00\n星期六 9:00–21:00"
+      },
+      {
+        "name": "奇岩攀岩館 Kirin Climbing Gym",
+        "address": "台北市南港區忠孝東路七段512號1樓",
+        "bestExit": "2號出口",
+        "walkingTime": "約 3 分鐘",
+        "website": "https://www.kirinclimbing.com.tw/h/Index?key=fum3t",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市南港區忠孝東路七段512號",
+        "phone": "(02) 2651-8875",
+        "businessHours": "星期日 10:00–20:00\n星期一 14:00–22:30\n星期二 14:00–22:30\n星期三 14:00–22:30\n星期四 14:00–22:30\n星期五 14:00–22:30\n星期六 10:00–20:00"
+      }
+    ],
+    "南港展覽館站": [
+      {
+        "name": "市民抱石攀岩館 Civic Bouldergym",
+        "address": "台北市南港區市民大道八段552號2樓",
+        "bestExit": "5號出口",
+        "walkingTime": "約 4 分鐘",
+        "website": "https://www.facebook.com/CivicBouldergymTaipei/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=台北市南港區市民大道八段552號",
+        "phone": "(02) 2788-0615",
+        "businessHours": "星期日 10:00–20:30\n星期一 10:00–22:30\n星期二 10:00–22:30\n星期三 10:00–22:30\n星期四 10:00–22:30\n星期五 10:00–22:30\n星期六 10:00–20:30"
+      }
+    ],
+    "頭前庄站": [
+      {
+        "name": "Mega STONE Climbing Gym",
+        "address": "新北市新莊區中正路56巷5號",
+        "bestExit": "4號出口",
+        "walkingTime": "約 2 分鐘",
+        "website": "https://www.facebook.com/MegaSTONE20190601/",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=新北市新莊區中正路56巷5號",
+        "phone": "(02) 8992-8991",
+        "businessHours": "星期日 10:00–20:00\n星期一 14:30–22:30\n星期二 14:30–22:30\n星期三 14:30–22:30\n星期四 14:30–22:30\n星期五 14:30–22:30\n星期六 10:00–20:00"
+      }
+    ],
+    "中和站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（中和店）",
+        "address": "新北市中和區立言街41號",
+        "bestExit": "單一出口",
+        "walkingTime": "約 5 分鐘",
+        "website": "https://tupclimbing.tw/branch/zhonghe",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=新北市中和區立言街41號",
+        "phone": "(02) 8228-2555",
+        "businessHours": "星期日 9:00–22:00\n星期一 12:00–23:00\n星期二 12:00–23:00\n星期三 12:00–23:00\n星期四 12:00–23:00\n星期五 12:00–23:00\n星期六 9:00–22:00"
+      }
+    ],
+    "七張站": [
+      {
+        "name": "原岩攀岩館 T-UP Climbing（新店店）",
+        "address": "231新北市新店區中興路三段70號7樓",
+        "bestExit": "1號出口",
+        "walkingTime": "約 10 分鐘",
+        "website": "https://tupclimbing.tw/branch/xindian",
+        "googleMapLink": "https://www.google.com/maps/search/?api=1&query=新北市新店區中興路三段70號",
+        "phone": "(02) 8914-7755",
+        "businessHours": "星期日 11:00–21:30\n星期一 11:00–23:00\n星期二 11:00–23:00\n星期三 11:00–23:00\n星期四 11:00–23:00\n星期五 11:00–23:00\n星期六 11:00–22:00"
+      }
+    ]
+  }
+}

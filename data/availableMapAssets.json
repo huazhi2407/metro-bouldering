@@ -1,0 +1,11 @@
+{
+  "assets": [
+    { "id": "station-pin", "src": "/map-assets/station-pin.svg", "label": "車站圖標" },
+    { "id": "frame-brown", "src": "/map-assets/frame-brown.svg", "label": "棕色邊框" },
+    { "id": "frame-orange", "src": "/map-assets/frame-orange.svg", "label": "橙色邊框" },
+    { "id": "frame-yellow", "src": "/map-assets/frame-yellow.svg", "label": "黃色邊框" },
+    { "id": "frame-red", "src": "/map-assets/frame-red.svg", "label": "紅色邊框" },
+    { "id": "frame-blue", "src": "/map-assets/frame-blue.svg", "label": "藍色邊框" },
+    { "id": "frame-green", "src": "/map-assets/frame-green.svg", "label": "綠色邊框" }
+  ]
+}
