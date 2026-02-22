@@ -756,7 +756,7 @@ export default function MetroMap() {
         )}
         <div
           ref={mapContainerRef}
-          className="overflow-auto border-2 border-gray-200 rounded-lg bg-white max-h-[70vh] flex items-start justify-center"
+          className={`overflow-auto border-2 border-gray-200 rounded-lg bg-white max-h-[70vh] flex items-start ${zoom !== 1 ? 'justify-start' : 'justify-center'}`}
           onWheel={(e) => {
             if (e.ctrlKey || e.metaKey) {
               e.preventDefault();
