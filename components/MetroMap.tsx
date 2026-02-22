@@ -755,7 +755,7 @@ export default function MetroMap() {
             className="relative inline-block max-w-full origin-center transition-transform duration-150"
             style={{
               transform: `scale(${zoom})`,
-              transformOrigin: 'center top',
+              transformOrigin: 'left top',
             }}
           >
             <img
