@@ -117,6 +117,8 @@ export default function MetroMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const mapWrapRef = useRef<HTMLDivElement>(null);
   const pinchRef = useRef<{ initialDistance: number; initialZoom: number } | null>(null);
+  /** 地圖在 zoom=1 時的尺寸（px），用於放大時讓容器可捲動、不裁切 */
+  const [baseMapSize, setBaseMapSize] = useState<{ width: number; height: number } | null>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.sessionStorage.getItem(ADMIN_STORAGE_KEY) === '1') {
@@ -548,6 +550,21 @@ export default function MetroMap() {
     return () => el.removeEventListener('touchmove', onMove);
   }, []);
 
+  // 在 zoom=1 時測量地圖尺寸，供放大後捲動區域使用
+  useEffect(() => {
+    if (zoom !== 1) return;
+    const el = mapWrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        setBaseMapSize({ width: rect.width, height: rect.height });
+      }
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [zoom]);
+
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-6 bg-gray-50 min-h-screen">
       <div className="flex-1 bg-white rounded-lg shadow-lg p-6 max-w-3xl">
@@ -751,13 +768,28 @@ export default function MetroMap() {
           onTouchEnd={handleMapTouchEnd}
         >
           <div
-            ref={mapWrapRef}
-            className="relative inline-block max-w-full origin-center transition-transform duration-150"
-            style={{
-              transform: `scale(${zoom})`,
-              transformOrigin: 'left top',
-            }}
+            className="transition-transform duration-150"
+            style={
+              baseMapSize && zoom !== 1
+                ? {
+                    width: baseMapSize.width * zoom,
+                    height: baseMapSize.height * zoom,
+                    minWidth: baseMapSize.width * zoom,
+                    minHeight: baseMapSize.height * zoom,
+                  }
+                : undefined
+            }
           >
+            <div
+              ref={mapWrapRef}
+              className="relative inline-block max-w-full origin-center transition-transform duration-150"
+              style={{
+                width: baseMapSize && zoom !== 1 ? baseMapSize.width : undefined,
+                height: baseMapSize && zoom !== 1 ? baseMapSize.height : undefined,
+                transform: `scale(${zoom})`,
+                transformOrigin: 'left top',
+              }}
+            >
             <img
               src="/R%2018.svg"
               alt="台北捷運路線圖"
@@ -943,6 +975,7 @@ export default function MetroMap() {
                 })}
               </g>
             </svg>
+            </div>
           </div>
         </div>
         <p className="mt-4 text-sm text-gray-600">
