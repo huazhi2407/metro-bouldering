@@ -500,7 +500,12 @@ export default function MetroMap() {
 
   const zoomIn = () => setZoom((z) => Math.min(ZOOM_MAX, z + ZOOM_STEP));
   const zoomOut = () => setZoom((z) => Math.max(ZOOM_MIN, z - ZOOM_STEP));
-  const zoomReset = () => setZoom(1);
+  const zoomReset = () => {
+    setZoom(1);
+    requestAnimationFrame(() => {
+      mapContainerRef.current?.scrollTo({ left: 0, top: 0 });
+    });
+  };
 
   const handleCopyPositions = () => {
     const lines = positions.map(
