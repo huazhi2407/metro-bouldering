@@ -531,13 +531,24 @@ export default function MetroMap() {
       };
     }
   };
+  const pendingZoomRef = useRef<number | null>(null);
+  const rafRef = useRef<number | null>(null);
   const handleMapTouchMove = (e: React.TouchEvent) => {
     if (e.touches.length === 2 && pinchRef.current) {
       e.preventDefault();
       const currentDistance = getTouchDistance(e.touches[0], e.touches[1]);
       const scale = currentDistance / pinchRef.current.initialDistance;
       const newZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, pinchRef.current.initialZoom * scale));
-      setZoom(newZoom);
+      pendingZoomRef.current = newZoom;
+      if (rafRef.current == null) {
+        rafRef.current = requestAnimationFrame(() => {
+          rafRef.current = null;
+          if (pendingZoomRef.current != null) {
+            setZoom(pendingZoomRef.current);
+            pendingZoomRef.current = null;
+          }
+        });
+      }
     }
   };
   const handleMapTouchEnd = (e: React.TouchEvent) => {
@@ -548,11 +559,18 @@ export default function MetroMap() {
   useEffect(() => {
     const el = mapContainerRef.current;
     if (!el) return;
+    const onStart = (e: TouchEvent) => {
+      if (e.touches.length === 2) e.preventDefault();
+    };
     const onMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchRef.current) e.preventDefault();
     };
+    el.addEventListener('touchstart', onStart, { passive: false });
     el.addEventListener('touchmove', onMove, { passive: false });
-    return () => el.removeEventListener('touchmove', onMove);
+    return () => {
+      el.removeEventListener('touchstart', onStart);
+      el.removeEventListener('touchmove', onMove);
+    };
   }, []);
 
   // 在 zoom=1 時測量地圖尺寸，供放大後捲動區域使用
