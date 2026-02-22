@@ -590,7 +590,7 @@ export default function MetroMap() {
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-6 bg-gray-50 min-h-screen">
-      <div className="flex-1 bg-white rounded-lg shadow-lg p-6 max-w-3xl">
+      <div className="flex-1 min-w-0 bg-white rounded-lg shadow-lg p-6 max-w-3xl">
         <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
           <h2 className="text-2xl font-bold text-gray-800">台北捷運路線圖</h2>
           <div className="flex items-center gap-2 flex-wrap">
