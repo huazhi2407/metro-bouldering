@@ -504,6 +504,7 @@ export default function MetroMap() {
     setZoom(1);
     requestAnimationFrame(() => {
       mapContainerRef.current?.scrollTo({ left: 0, top: 0 });
+      if (typeof window !== 'undefined') window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
     });
   };
 
