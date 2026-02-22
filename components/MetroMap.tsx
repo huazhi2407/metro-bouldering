@@ -116,6 +116,7 @@ export default function MetroMap() {
   const [layerResize, setLayerResize] = useState<{ id: string; startSvgX: number; startSvgY: number; startWidth: number; startHeight: number } | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const mapWrapRef = useRef<HTMLDivElement>(null);
+  const pinchRef = useRef<{ initialDistance: number; initialZoom: number } | null>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.sessionStorage.getItem(ADMIN_STORAGE_KEY) === '1') {
@@ -512,6 +513,41 @@ export default function MetroMap() {
   const selectedGyms = selectedStationId ? (gymsByStation[selectedStationId] ?? []) : [];
   const viewBox = `0 0 ${W} ${H}`;
 
+  const getTouchDistance = (a: React.Touch, b: React.Touch) =>
+    Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+
+  const handleMapTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length === 2) {
+      pinchRef.current = {
+        initialDistance: getTouchDistance(e.touches[0], e.touches[1]),
+        initialZoom: zoom,
+      };
+    }
+  };
+  const handleMapTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length === 2 && pinchRef.current) {
+      e.preventDefault();
+      const currentDistance = getTouchDistance(e.touches[0], e.touches[1]);
+      const scale = currentDistance / pinchRef.current.initialDistance;
+      const newZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, pinchRef.current.initialZoom * scale));
+      setZoom(newZoom);
+    }
+  };
+  const handleMapTouchEnd = (e: React.TouchEvent) => {
+    if (e.touches.length < 2) pinchRef.current = null;
+  };
+
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = mapContainerRef.current;
+    if (!el) return;
+    const onMove = (e: TouchEvent) => {
+      if (e.touches.length === 2 && pinchRef.current) e.preventDefault();
+    };
+    el.addEventListener('touchmove', onMove, { passive: false });
+    return () => el.removeEventListener('touchmove', onMove);
+  }, []);
+
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-6 bg-gray-50 min-h-screen">
       <div className="flex-1 bg-white rounded-lg shadow-lg p-6 max-w-3xl">
@@ -702,6 +738,7 @@ export default function MetroMap() {
           </div>
         )}
         <div
+          ref={mapContainerRef}
           className="overflow-auto border-2 border-gray-200 rounded-lg bg-white max-h-[70vh] flex items-start justify-center"
           onWheel={(e) => {
             if (e.ctrlKey || e.metaKey) {
@@ -709,6 +746,9 @@ export default function MetroMap() {
               setZoom((z) => Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, e.deltaY > 0 ? z - 0.1 : z + 0.1)));
             }
           }}
+          onTouchStart={handleMapTouchStart}
+          onTouchMove={handleMapTouchMove}
+          onTouchEnd={handleMapTouchEnd}
         >
           <div
             ref={mapWrapRef}
