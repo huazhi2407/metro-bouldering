@@ -252,6 +252,7 @@ export default function MetroMap() {
   };
 
   const handleGymClick = (gym: Gym, stationId?: string) => {
+    setZoom(1);
     if (stationId) setSelectedStationId(stationId);
     setModalStationId(stationId ?? null);
     setSelectedGym(gym);
@@ -259,6 +260,7 @@ export default function MetroMap() {
   };
 
   const handleSearchSelect = (item: { gym: Gym; stationId: string }) => {
+    setZoom(1);
     setSelectedStationId(item.stationId);
     setModalStationId(item.stationId);
     setSelectedGym(item.gym);
